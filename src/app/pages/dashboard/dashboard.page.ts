@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import {
   IonContent,
@@ -20,7 +21,8 @@ import { CampaignService } from '../../core/services/campaign.service';
   imports: [
     IonContent,
     IonCard,
-    IonCardContent
+    IonCardContent,
+     RouterLink
   ]
 })
 export class DashboardPage {

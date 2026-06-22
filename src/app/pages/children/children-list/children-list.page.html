@@ -18,6 +18,17 @@
 
         <ion-card-title>
           {{ child.name }}
+          <p>
+      Progresso Vacinal:
+    </p>
+    <progress
+  [value]="getCompletionPercentage(child.id)"
+  max="100">
+</progress>
+
+<p>
+  {{ getCompletionPercentage(child.id) }}%
+</p>
         </ion-card-title>
 
       </ion-card-header>
@@ -26,6 +37,32 @@
 
         Nascimento:
         {{ child.birthDate }}
+
+      </ion-card-content>
+
+       <ion-card-content>
+
+       <p>
+  ✔ Aplicadas:
+  {{ getAppliedCount(child.id) }}
+</p>
+
+<p>
+  ⏳ Pendentes:
+  {{ getPendingCount(child.id) }}
+</p>
+
+<p>
+  ⚠️ Atrasadas:
+  {{ getOverdueCount(child.id) }}
+</p>
+
+<p>
+  Status:
+  <strong>
+    {{ getOverallStatus(child.id) }}
+  </strong>
+</p>
 
       </ion-card-content>
 

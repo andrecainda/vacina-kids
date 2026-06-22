@@ -1,20 +1,59 @@
-import { Component, OnInit } from '@angular/core';
+import { Campaign } from '../../core/models/campaign.model';
+import { Component } from '@angular/core';
+
+
+import {
+  IonContent,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle
+} from '@ionic/angular/standalone';
+
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { CampaignService } from '../../core/services/campaign.service';
 
 @Component({
   selector: 'app-campaigns',
   templateUrl: './campaigns.page.html',
   styleUrls: ['./campaigns.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    CommonModule,
+    IonContent,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardTitle
+  ]
 })
-export class CampaignsPage implements OnInit {
+export class CampaignsPage {
 
-  constructor() { }
+  campaigns: Campaign[] = [];
 
-  ngOnInit() {
+  activeCampaigns: Campaign[] = [];
+
+  constructor(
+    private campaignService: CampaignService
+  ) {
+    this.load();
+  }
+
+  load() {
+
+    this.campaigns =
+      this.campaignService.getCampaigns();
+
+    this.activeCampaigns =
+      this.campaignService.getActiveCampaigns();
+  }
+
+  isActive(campaign: any): boolean {
+
+    const today = new Date();
+
+    return new Date(campaign.startDate) <= today &&
+           new Date(campaign.endDate) >= today;
   }
 
 }

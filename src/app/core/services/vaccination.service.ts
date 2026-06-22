@@ -17,28 +17,83 @@ export class VaccinationService {
   }
 
   isOverdue(record: any): boolean {
-  if (record.appliedDate) return false;
 
-  const today = new Date();
-  const scheduled = new Date(record.scheduledDate);
+    if (record.appliedDate) {
+      return false;
+    }
 
-  return scheduled < today;
-}
+    const today = new Date();
+    const scheduled = new Date(record.scheduledDate);
 
-getVaccinationStatus(record: any): 'done' | 'pending' | 'overdue' {
-
-  if (record.appliedDate) {
-    return 'done';
+    return scheduled < today;
   }
 
-  const today = new Date();
-  const scheduled = new Date(record.scheduledDate);
+  getVaccinationStatus(
+    record: any
+  ): 'done' | 'pending' | 'overdue' {
 
-  if (scheduled < today) {
-    return 'overdue';
+    if (record.appliedDate) {
+      return 'done';
+    }
+
+    const today = new Date();
+    const scheduled = new Date(record.scheduledDate);
+
+    if (scheduled < today) {
+      return 'overdue';
+    }
+
+    return 'pending';
   }
 
-  return 'pending';
-}
+  getAppliedCount(childId: string): number {
 
+    return this.getRecordsByChild(childId)
+      .filter(r => r.appliedDate)
+      .length;
+
+  }
+
+  getPendingCount(childId: string): number {
+
+    return this.getRecordsByChild(childId)
+      .filter(r => !r.appliedDate)
+      .length;
+
+  }
+
+  getOverdueCount(childId: string): number {
+
+    const today = new Date();
+
+    return this.getRecordsByChild(childId)
+      .filter(record => {
+
+        if (record.appliedDate) {
+          return false;
+        }
+
+        return new Date(record.scheduledDate) < today;
+
+      })
+      .length;
+
+  }
+
+  getCompletionPercentage(childId: string): number {
+
+  const records =
+    this.getRecordsByChild(childId);
+
+  const total =
+    records.length;
+
+  const applied =
+    records.filter(r => r.appliedDate).length;
+
+  return Math.round(
+    (applied / total) * 100
+  );
+
+}
 }

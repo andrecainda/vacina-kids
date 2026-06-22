@@ -1,13 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>campaigns</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">campaigns</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1>Campanhas de Vacinação</h1>
+
+  @for(c of campaigns; track c.id){
+
+    <ion-card [ngClass]="{ active: isActive(c) }">
+
+      <ion-card-header>
+
+        <ion-card-title>
+          {{ c.title }}
+        </ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <p>{{ c.description }}</p>
+
+        <p><strong>Público:</strong> {{ c.targetAudience }}</p>
+
+        <p>
+          📅 {{ c.startDate }} até {{ c.endDate }}
+        </p>
+
+        <p>
+          Status:
+          <strong>
+            {{ isActive(c) ? 'Ativa' : 'Inativa' }}
+          </strong>
+        </p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  }
+
 </ion-content>
