@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Crianças
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  @for (child of children; track child.id) {
+
+    <ion-card
+      button
+      (click)="openChild(child.id)">
+
+      <ion-card-header>
+
+        <ion-card-title>
+          {{ child.name }}
+        </ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+
+        Nascimento:
+        {{ child.birthDate }}
+
+      </ion-card-content>
+
+    </ion-card>
+
+  }
+
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+
+    <ion-title>
+
+      {{ child?.name }}
+
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+
+    <ion-card-header>
+
+      <ion-card-title>
+        Informações
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      Data Nascimento:
+      {{ child?.birthDate }}
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-header>
+
+      <ion-card-title>
+        Histórico Vacinal
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      @for(record of records; track record.id){
+
+        <p>
+
+          Vacina ID:
+          {{ record.vaccineId }}
+
+          -
+
+          {{ record.appliedDate ? 'Aplicada' : 'Pendente' }}
+
+        </p>
+
+      }
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
