@@ -64,4 +64,8 @@ export class ChildDetailsPage {
 
   }
 
+  getStatus(record: any) {
+  return this.vaccinationService.getVaccinationStatus(record);
+}
+
 }

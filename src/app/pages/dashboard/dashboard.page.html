@@ -1,30 +1,34 @@
-<ion-header>
-
-  <ion-toolbar color="primary">
-
-    <ion-title>
-      Vacina Kids
-    </ion-title>
-
-  </ion-toolbar>
-
-</ion-header>
-
 <ion-content class="ion-padding">
 
+  <h1>Vacina Kids</h1>
+
+  <p>
+    Acompanhe a vacinação infantil.
+  </p>
+
   <ion-card routerLink="/children">
+  <ion-card-content>
+    👶 Crianças
+    <h2>{{ childrenCount }}</h2>
+  </ion-card-content>
+</ion-card>
 
-    <ion-card-header>
+  <ion-card >
+  <ion-card-content>
+    💉 Aplicadas
+    <h2>{{ appliedVaccines }}</h2>
+  </ion-card-content>
+</ion-card>
 
-      <ion-card-title>
-        👶 Crianças
-      </ion-card-title>
-
-    </ion-card-header>
+  <ion-card>
 
     <ion-card-content>
 
-      Gerenciar crianças
+      ⚠️ Pendentes
+
+      <h2>
+        {{ pendingVaccines }}
+      </h2>
 
     </ion-card-content>
 
@@ -32,17 +36,13 @@
 
   <ion-card routerLink="/campaigns">
 
-    <ion-card-header>
-
-      <ion-card-title>
-        📢 Campanhas
-      </ion-card-title>
-
-    </ion-card-header>
-
     <ion-card-content>
 
-      Campanhas ativas
+      📢 Campanhas
+
+      <h2>
+        {{ campaignsCount }}
+      </h2>
 
     </ion-card-content>
 

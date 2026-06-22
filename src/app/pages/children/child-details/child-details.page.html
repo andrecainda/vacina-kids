@@ -47,16 +47,24 @@
 
       @for(record of records; track record.id){
 
-        <p>
+        <ion-card>
 
-          Vacina ID:
-          {{ record.vaccineId }}
+          <ion-card-content>
 
-          -
+            <p>Vacina: {{ record.vaccineId }}</p>
 
-          {{ record.appliedDate ? 'Aplicada' : 'Pendente' }}
+            <p>Data prevista: {{ record.scheduledDate }}</p>
 
-        </p>
+            <p>
+              Status:
+              <strong>
+                {{ getStatus(record) }}
+              </strong>
+            </p>
+
+          </ion-card-content>
+
+        </ion-card>
 
       }
 
