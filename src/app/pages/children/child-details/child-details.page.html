@@ -47,11 +47,11 @@
 
       @for(record of records; track record.id){
 
-        <ion-card>
+        <ion-card [ngClass]="getStatus(record)">
 
           <ion-card-content>
 
-            <p>Vacina: {{ record.vaccineId }}</p>
+            <p><strong>Vacina:</strong> {{ record.vaccineId }}</p>
 
             <p>Data prevista: {{ record.scheduledDate }}</p>
 
