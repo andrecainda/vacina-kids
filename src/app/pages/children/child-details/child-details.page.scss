@@ -1,11 +1,43 @@
 .done {
   border-left: 6px solid #ABC270;
+
+  background-color: #ABC270;
+
+  color: #473C33;
 }
 
 .pending {
   border-left: 6px solid #FEC868;
+
+   background-color: #FEC868;
+
+  color: #473C33;
 }
 
 .overdue {
   border-left: 6px solid #FDA769;
+
+  background-color: #FDA769;
+
+  color: #473C33;
+}
+
+.status-badge {
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-weight: 600;
+
+  display: inline-block;
+
+  margin-left: 8px;
+
+}
+
+ion-card {
+
+  border-radius: 16px;
+
 }

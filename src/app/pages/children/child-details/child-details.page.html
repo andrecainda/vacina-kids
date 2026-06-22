@@ -53,7 +53,7 @@
 
             <p>
               <strong>Vacina:</strong>
-              {{ record.vaccineId }}
+              {{ getVaccineName(record.vaccineId) }}
             </p>
 
             <p>
@@ -66,12 +66,19 @@
               {{ record.appliedDate }}
             </p>
 
-            <p>
-              Status:
-              <strong>
-                {{ getStatusLabel(record) }}
-              </strong>
-            </p>
+           <p>
+
+            Status:
+
+            <span
+              class="status-badge"
+              [ngClass]="getStatus(record)">
+
+              {{ getStatusLabel(record) }}
+
+            </span>
+
+          </p>
 
           </ion-card-content>
 

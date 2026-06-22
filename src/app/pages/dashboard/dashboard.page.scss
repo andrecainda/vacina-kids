@@ -32,3 +32,85 @@ h2 {
   font-size: 2rem;
   font-weight: bold;
 }
+
+
+.dashboard-content {
+
+  --background: #f8f8f8;
+
+}
+
+.header {
+
+  text-align: center;
+
+  margin: 20px 0;
+
+}
+
+.header h1 {
+
+  color: #473C33;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+}
+
+.header p {
+
+  color: #666;
+
+}
+
+ion-card {
+
+  border-radius: 18px;
+
+  margin-bottom: 16px;
+
+  cursor: pointer;
+
+}
+
+ion-card h1 {
+
+  font-size: 36px;
+
+  margin-top: 10px;
+
+}
+
+.card-children {
+
+  background: #ABC270;
+
+  color: #473C33;
+
+}
+
+.card-applied {
+
+  background: #ABC270;
+
+  color: #473C33;
+
+}
+
+.card-pending {
+
+  background: #FEC868;
+
+  color: #473C33;
+
+}
+
+.card-campaigns {
+
+  background: #FDA769;
+
+  color: #473C33;
+
+}
+

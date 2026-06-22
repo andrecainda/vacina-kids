@@ -1,67 +1,65 @@
-<ion-content class="ion-padding">
+<ion-content class="dashboard-content">
 
-  <h1>Vacina Kids</h1>
+  <div class="header">
 
-  <p>
-    Acompanhe a vacinação infantil.
-  </p>
+    <h1>Vacina Kids</h1>
 
-  <ion-card
-  class="dashboard-card children-card"
-  routerLink="/children">
+    <p>
+      Acompanhe a vacinação infantil
+    </p>
 
-  <ion-card-content>
-
-    👶 Crianças
-
-    <h2>{{ childrenCount }}</h2>
-
-  </ion-card-content>
-
-</ion-card>
+  </div>
 
   <ion-card
-  class="dashboard-card applied-card">
+    class="card-children"
+    routerLink="/children">
 
-  <ion-card-content>
+    <ion-card-content>
 
-    💉 Aplicadas
+      <h3>👶 Crianças</h3>
 
-    <h2>{{ appliedVaccines }}</h2>
+      <h1>{{ childrenCount }}</h1>
 
-  </ion-card-content>
+    </ion-card-content>
 
-</ion-card>
+  </ion-card>
 
+  <ion-card class="card-applied">
 
+    <ion-card-content>
 
-<ion-card
-  class="dashboard-card pending-card">
+      <h3>💉 Aplicadas</h3>
 
-  <ion-card-content>
+      <h1>{{ appliedVaccines }}</h1>
 
-    ⚠️ Pendentes
+    </ion-card-content>
 
-    <h2>{{ pendingVaccines }}</h2>
+  </ion-card>
 
-  </ion-card-content>
+  <ion-card class="card-pending">
 
-</ion-card>
+    <ion-card-content>
 
+      <h3>⏳ Pendentes</h3>
 
+      <h1>{{ pendingVaccines }}</h1>
+
+    </ion-card-content>
+
+  </ion-card>
 
   <ion-card
-  class="dashboard-card campaign-card"
-  routerLink="/campaigns">
+    class="card-campaigns"
+    routerLink="/campaigns">
 
-  <ion-card-content>
+    <ion-card-content>
 
-    📢 Campanhas
+      <h3>📢 Campanhas</h3>
 
-    <h2>{{ campaignsCount }}</h2>
+      <h1>{{ campaignsCount }}</h1>
 
-  </ion-card-content>
+    </ion-card-content>
 
-</ion-card>
+  </ion-card>
 
 </ion-content>

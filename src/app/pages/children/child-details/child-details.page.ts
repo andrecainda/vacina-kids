@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { VaccineService } from '../../../core/services/vaccine.service';
 import { ActivatedRoute } from '@angular/router';
 
 import {
@@ -45,7 +45,8 @@ export class ChildDetailsPage {
   constructor(
     private route: ActivatedRoute,
     private childService: ChildService,
-    private vaccinationService: VaccinationService
+    private vaccinationService: VaccinationService,
+    private vaccineService: VaccineService
   ) {
 
     const id =
@@ -92,6 +93,15 @@ getStatusLabel(record: any): string {
       return '-';
 
   }
+
+}
+
+getVaccineName(vaccineId: string): string {
+
+  const vaccine =
+    this.vaccineService.getVaccineById(vaccineId);
+
+  return vaccine?.name || vaccineId;
 
 }
 }
