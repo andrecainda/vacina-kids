@@ -51,14 +51,25 @@
 
           <ion-card-content>
 
-            <p><strong>Vacina:</strong> {{ record.vaccineId }}</p>
+            <p>
+              <strong>Vacina:</strong>
+              {{ record.vaccineId }}
+            </p>
 
-            <p>Data prevista: {{ record.scheduledDate }}</p>
+            <p>
+              <strong>Data prevista:</strong>
+              {{ record.scheduledDate }}
+            </p>
+
+            <p *ngIf="record.appliedDate">
+              <strong>Data aplicada:</strong>
+              {{ record.appliedDate }}
+            </p>
 
             <p>
               Status:
               <strong>
-                {{ getStatus(record) }}
+                {{ getStatusLabel(record) }}
               </strong>
             </p>
 

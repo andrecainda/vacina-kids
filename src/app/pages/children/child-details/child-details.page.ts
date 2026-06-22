@@ -62,10 +62,36 @@ export class ChildDetailsPage {
 
     }
 
+
   }
 
-  getStatus(record: any) {
-  return this.vaccinationService.getVaccinationStatus(record);
+  getStatus(record: any): string {
+
+  return this.vaccinationService
+    .getVaccinationStatus(record);
+
 }
 
+getStatusLabel(record: any): string {
+
+  const status =
+    this.getStatus(record);
+
+  switch (status) {
+
+    case 'done':
+      return 'Aplicada';
+
+    case 'pending':
+      return 'Pendente';
+
+    case 'overdue':
+      return 'Atrasada';
+
+    default:
+      return '-';
+
+  }
+
+}
 }

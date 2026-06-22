@@ -10,5 +10,11 @@ export const CHILDREN = [
     name: 'Lucas',
     birthDate: '2018-02-15',
     gender: 'male'
+  },
+  {
+    id: '3',
+    name: 'Maria',
+    birthDate: '2020-07-20',
+    gender: 'female'
   }
 ];

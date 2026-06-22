@@ -4,11 +4,16 @@
 :root {
 
   --ion-color-primary: #ABC270;
+  --ion-color-primary-rgb: 171,194,112;
+  --ion-color-primary-contrast: #ffffff;
 
   --ion-color-secondary: #FEC868;
+  --ion-color-secondary-rgb: 254,200,104;
 
-  --ion-color-tertiary: #FDA769;
+  --ion-color-warning: #FDA769;
+  --ion-color-warning-rgb: 253,167,105;
 
-  --ion-color-dark: #473C33;
+  --ion-color-dark-custom: #473C33;
 
+  --app-background: #f8f8f8;
 }

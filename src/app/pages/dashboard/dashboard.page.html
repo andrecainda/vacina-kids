@@ -6,46 +6,62 @@
     Acompanhe a vacinação infantil.
   </p>
 
-  <ion-card routerLink="/children">
+  <ion-card
+  class="dashboard-card children-card"
+  routerLink="/children">
+
   <ion-card-content>
+
     👶 Crianças
+
     <h2>{{ childrenCount }}</h2>
+
   </ion-card-content>
+
 </ion-card>
 
-  <ion-card >
+  <ion-card
+  class="dashboard-card applied-card">
+
   <ion-card-content>
+
     💉 Aplicadas
+
     <h2>{{ appliedVaccines }}</h2>
+
   </ion-card-content>
+
 </ion-card>
 
-  <ion-card>
 
-    <ion-card-content>
 
-      ⚠️ Pendentes
+<ion-card
+  class="dashboard-card pending-card">
 
-      <h2>
-        {{ pendingVaccines }}
-      </h2>
+  <ion-card-content>
 
-    </ion-card-content>
+    ⚠️ Pendentes
 
-  </ion-card>
+    <h2>{{ pendingVaccines }}</h2>
 
-  <ion-card routerLink="/campaigns">
+  </ion-card-content>
 
-    <ion-card-content>
+</ion-card>
 
-      📢 Campanhas
 
-      <h2>
-        {{ campaignsCount }}
-      </h2>
 
-    </ion-card-content>
+  <ion-card
+  class="dashboard-card campaign-card"
+  routerLink="/campaigns">
 
-  </ion-card>
+  <ion-card-content>
+
+    📢 Campanhas
+
+    <h2>{{ campaignsCount }}</h2>
+
+  </ion-card-content>
+
+</ion-card>
 
 </ion-content>
